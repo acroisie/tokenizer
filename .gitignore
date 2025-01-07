@@ -2,3 +2,5 @@ node_modules/
 .deps/
 .states/
 artifacts/
+package.json
+package-lock.json

@@ -84,7 +84,7 @@ contract Acroisie42 is ERC20 {
         require(!txn.executed, "Transaction already executed.");
         require(txn.approvalCount >= requiredApprovals, "Not enough approvals.");
 
-        txn.executed = true;
+        txn.executed = true; 
 
         if (txn.txType == TransactionType.TRANSFER) {
             _transfer(address(this), txn.to, txn.amount);
@@ -99,5 +99,9 @@ contract Acroisie42 is ERC20 {
 
     function treasuryBalance() external view returns (uint256) {
         return balanceOf(address(this));
+    }
+
+    function myBalance() external view returns (uint256) {
+        return balanceOf(msg.sender);
     }
 }
